@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
+
+Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 
@@ -13,6 +16,16 @@ new Vue({
   template: '<App/>',
   components: { App },
   created () {
-    console.log(this.$route.query.abc)
+    console.log(this.$route.params.id)
   }
 }).$mount('#app')
+
+// router.beforeEach((to, from, next) => {
+// 	console.log(to)
+// 	console.log(from)
+// 	next(false)
+// })
+
+// router.afterEach((to, from) => {
+// 	console.log('after jump...')
+// })

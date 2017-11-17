@@ -1,10 +1,17 @@
 <template>
-  <p>my age is {{$route.params.num}}</p>  
+  <div>
+    <p @click="goToIndex">my age is {{$route.params.num}}</p>  
+  </div>
 </template>
 
 <script>
 export default {
   name: 'age',
+  methods: {
+    goToIndex () {
+      this.$router.replace({path: '/demo/mrc/age/123'})
+    }
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
